@@ -10,7 +10,7 @@ void main(List<String> arguments) {
   // Testing documentation comment with [].
   print('6 * 7 = ${belajar_dart.calculate()}');
 
-  // Type Data
+  // Type Data & Input
   stdout.write('Nama Anda : ');
   String? name = stdin.readLineSync()!;
   stdout.write('Usia Anda : ');
@@ -89,6 +89,52 @@ void main(List<String> arguments) {
     }
     print('$searchNumber != ${primeNumbers[i]}');
   }
+
+  // List (Array)
+  var numberList = [1, 2, 3, 4, 5];
+  var stringList = ['Hello', 'Dicoding', 'Dart'];
+  stringList.forEach((s) => stdout.write(s));
+  numberList.forEach((s) => stdout.write(s));
+
+  print('');
+
+  // Spread Operator (...)
+  var favorites = ['Seafood', 'Salad', 'Nugget', 'Soup'];
+  var others = ['Cake', 'Pie', 'Donut'];
+  var allFavorites = [...favorites, ...others];
+  print(allFavorites);
+
+  // set
+  var numberSet = {1, 4, 6};
+
+  numberSet.add(6);
+  numberSet.addAll({2, 2, 3});
+  numberSet.remove(3);
+
+  print(numberSet.elementAt(2));
+
+  //set union & intersection
+  var setA = {1, 2, 4, 5};
+  var setB = {1, 5, 7};
+
+  var union = setA.union(setB);
+  var intersection = setA.intersection(setB);
+
+  print(union);
+  print(intersection);
+  
+  // Map (Array key-value)
+  var capital = {
+    'Jakarta': 'Indonesia',
+    'London': 'England',
+    'Tokyo': 'Japan'
+  };
+  
+  print(capital['Jakarta']);
+
+  // add Array key-value
+  capital['New Delhi'] = 'India';
+  print(capital);
 }
 
 // function
@@ -98,3 +144,9 @@ double average(num num1, num num2) => (num1 + num2) / 2;
 void buyAMeal(String favoriteFood) {
   print('Bought $favoriteFood');
 }
+
+// List
+// stringList.remove('Programming');  Menghapus list dengan nilai Programming
+// stringList.removeAt(1);            Menghapus list pada index ke-1
+// stringList.removeLast();           Menghapus data list terakhir
+// stringList.removeRange(0, 2);      Menghapus list mulai index ke-0 sampai ke-1 (indeks 2 masih dipertahankan)

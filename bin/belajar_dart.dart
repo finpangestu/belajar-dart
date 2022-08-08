@@ -6,6 +6,7 @@ import 'dart:io';
 void main(List<String> arguments) {
   // Mencetak Hello Dart! Dart is great. pada konsol
   print('Hello Dart! Dart is great.');
+
   // Testing documentation comment with [].
   print('6 * 7 = ${belajar_dart.calculate()}');
 
@@ -34,18 +35,34 @@ void main(List<String> arguments) {
     var a = 7;
     var b = 0;
     print(a ~/ b);
-  } catch (e) {
-    print('Exception happened: $e');
-  }
-
-  try {
-    var a = 7;
-    var b = 0;
-    print(a ~/ b);
   } catch(e, s) {
     print('Exception happened: $e');
     print('Stack trace: $s');
   } finally {
+    // Tetap dieksekusi apapun nilai try dan catch-nya
     print('This line still executed');
   }
+
+  // function
+  var firstNumber = 7;
+  var secondNumber = 10;
+  print('Rata-rata dari $firstNumber & $secondNumber adalah ${average(firstNumber, secondNumber)}');
+
+  //null safety (?) variable boleh memiliki nilai null
+  String? favoriteFood = 'Mie Ayam';
+
+  buyAMeal(favoriteFood);
+
+  // tEST
+  var firstString = 'Dart';
+  var secondString = 'Flutter';
+  print(firstString + secondString);
+}
+
+// function
+double average(num num1, num num2) => (num1 + num2) / 2;
+
+//null safety
+void buyAMeal(String favoriteFood) {
+  print('Bought $favoriteFood');
 }

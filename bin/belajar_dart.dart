@@ -12,7 +12,7 @@ void main(List<String> arguments) {
 
   // Type Data
   stdout.write('Nama Anda : ');
-  String name = stdin.readLineSync()!;
+  String? name = stdin.readLineSync()!;
   stdout.write('Usia Anda : ');
   int age = int.parse(stdin.readLineSync()!);
   print('Halo $name, usia Anda $age tahun');
@@ -53,10 +53,42 @@ void main(List<String> arguments) {
 
   buyAMeal(favoriteFood);
 
-  // tEST
-  var firstString = 'Dart';
-  var secondString = 'Flutter';
-  print(firstString + secondString);
+  // conditional expression
+  var now = 13;
+  var openHours = 12;
+  var shopStatus = now > openHours ? "Hello, we're open" : "Sorry, we've closed";
+  print(shopStatus);
+
+  var buyer = name ?? 'user';
+  print(buyer);
+
+  // for loops
+  for (int i = 1; i <= 10; i++) {
+    for (int j = 1; j <= i; j++) {
+      stdout.write('* ');
+    }
+    print('');
+  }
+
+  // while / do-=while
+  var i = 1;
+  while (i < 5) {
+    print(i);
+    i++;
+  }
+
+  // break & continue
+  var primeNumbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71];
+  stdout.write('Masukkan bilangan prima : ');
+  var searchNumber = int.parse(stdin.readLineSync()!);
+
+  for (int i = 0; i < primeNumbers.length; i++) {
+    if (searchNumber == primeNumbers[i]) {
+      print('$searchNumber adalah bilangan prima ke-${i+1}');
+      break;
+    }
+    print('$searchNumber != ${primeNumbers[i]}');
+  }
 }
 
 // function
